@@ -4,9 +4,9 @@ using System.Text;
 
 namespace Wy.Nacos.Configuration
 {
-    public class NacosConfig
+    public class NacosCoreConfig
     {
-        public NacosConfig(string dataId, string group)
+        public NacosCoreConfig(string dataId, string group)
         {
             if (string.IsNullOrEmpty(dataId))
                 throw new ArgumentNullException("dataId is null or empty");
@@ -19,7 +19,7 @@ namespace Wy.Nacos.Configuration
         }
 
 
-        public NacosConfig(string dataId, string group, string tenant) : this(dataId, group)
+        public NacosCoreConfig(string dataId, string group, string tenant) : this(dataId, group)
         {
             if (string.IsNullOrEmpty(tenant))
                 throw new ArgumentNullException("tenant is null or empty");

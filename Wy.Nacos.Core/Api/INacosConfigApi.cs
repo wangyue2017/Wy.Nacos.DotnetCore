@@ -8,8 +8,8 @@ namespace Wy.Nacos.Core
 {
     public interface INacosConfigApi
     {
-        Task<Result<string>> GetAsync(NacosConfig config);
+        Task<Result<string>> GetAsync(NacosCoreConfig config);
 
-        Task<Result<T>> GetAsync<T>(NacosConfig config);
+        Task<Result<T>> GetAsync<T>(NacosCoreConfig config);
     }
 }
