@@ -16,7 +16,7 @@ namespace Wy.Nacos.Core
             _httpClientFactory = httpClientFactory;
         }
 
-        public async Task<Result<string>> GetAsync(NacosConfig config)
+        public async Task<Result<string>> GetAsync(NacosCoreConfig config)
         {
             var client = _httpClientFactory.CreateClient(NacosHttpConsts.HttpService);
             var response = await client.GetAsync($"{NacosRequestUrlConsts.ConfigUrl}{config.ToString()}");
@@ -27,7 +27,7 @@ namespace Wy.Nacos.Core
             return new Result<string>(await response.Content.ReadAsStringAsync());
         }
 
-        public async Task<Result<T>> GetAsync<T>(NacosConfig config)
+        public async Task<Result<T>> GetAsync<T>(NacosCoreConfig config)
         {
             var client = _httpClientFactory.CreateClient(NacosHttpConsts.HttpService);
             var response = await client.GetAsync($"{NacosRequestUrlConsts.ConfigUrl}{config.ToString()}");
